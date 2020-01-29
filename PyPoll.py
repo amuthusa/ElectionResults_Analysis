@@ -58,13 +58,15 @@ winning_percentage_of_votes = 0
 
 #Determine the percentage of votes for each candidate by looping through the counts
 #1.Iterate through the list
+candidates_summary = list()
+
 for candidate in candidate_votes:
     #2.Retrive the vote count of a candidate
     votes = candidate_votes[candidate]
     #3.calculate the percentage of votes
     percentage_of_votes = (float(votes) / float(total_votes) ) * 100
     #4.Print the percentage of votes for each candidate
-    print(f"{candidate}: {percentage_of_votes:.1f}% ({votes:,})\n")
+    candidates_summary.append(f"{candidate}: {percentage_of_votes:.1f}% ({votes:,})\n")
 
     #Determine winning candaodate, votes_count and percentage of votes
     #1. determine if votes is greater than winning_votes_count and percentage_of_votes is greater than winning_percentage_of_votes
@@ -75,7 +77,7 @@ for candidate in candidate_votes:
         winning_percentage_of_votes = percentage_of_votes
 
 winning_candidate_summary = (
-    f"-------------------------\n"
+    f"-------------------------------------\n"
     f"Winner: {winning_candidate}\n"
     f"Winning Vote Count: {winning_votes_count:,}\n"
     f"Winning Percentage: {winning_percentage_of_votes:.1f}\n"
@@ -88,7 +90,17 @@ file_to_save = os.path.join("analysis", "election_analysis.txt")
 #open a file for writing
 with open(file_to_save, 'w') as election_analysis:
     
-    #ToDo: write the ananlysis to the file
-    election_analysis.write("Counties in the election\n")
-    election_analysis.write("-----------------------------\n")
-    election_analysis.write("Arapahoe \nDenver \nJefferson")
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------------------\n"
+        f"Total Votes: {total_votes: ,}\n"
+        f"-------------------------------------\n"
+    )
+    #write the total votes count to the file
+    election_analysis.write(election_results)
+    
+    #write candidate summary with candidate name, percentage_votes and total number of votes they got
+    for candidate_summary in candidates_summary:
+        election_analysis.write(candidate_summary)
+    #finally write the winning candidate details
+    election_analysis.write(winning_candidate_summary)
