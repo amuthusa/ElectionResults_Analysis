@@ -80,7 +80,7 @@ winning_candidate_summary = (
     f"-------------------------------------\n"
     f"Winner: {winning_candidate}\n"
     f"Winning Vote Count: {winning_votes_count:,}\n"
-    f"Winning Percentage: {winning_percentage_of_votes:.1f}\n"
+    f"Winning Percentage: {winning_percentage_of_votes:.1f}%\n"
 )
 
 print(winning_candidate_summary)
