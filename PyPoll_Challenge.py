@@ -68,6 +68,7 @@ def getConsolidateCandidateSummary(candidate_votes):
         f"Winner: {winning_candidate}\n"
         f"Winning Vote Count: {winning_votes_count:,}\n"
         f"Winning Percentage: {winning_percentage_of_votes:.1f}%\n"
+        f"-------------------------------------\n"
     )
     #add winnning candidate summary to candidate summary to make it consolidated summary
     candidates_summary.append(winning_candidate_summary)
