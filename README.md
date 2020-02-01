@@ -27,4 +27,4 @@
 
 ## Challenge Summary:
   Based on the election data provided for Colorado local congressional election. Denver had the largest voter turnout with approx 83% followed by Jefferson which was close to 11% while Arapahoe has the lowest voter turnout of approx 7% 
-  ![Election Results with county and candidates](images/ElectionResults_CountyAndCandidate.png)
+  ![Election Results county and candidates] (images/ElectionResults_CountyAndCandidate.png)
