@@ -22,4 +22,8 @@
   
   The winner is Diana DeGette who got the majority of the votes. Please see the snapshot of the result in a tabular form ![Election Results with candidate and winner](images/ElectionResults_WinnerDetails.png)
   
-  
+## Challenge Overview:
+  Extend the election results code to get additional details about County wise voter turnout, percentage vote and also find the county which has largest voter turnout
+
+## Challenge Summary:
+  Based on the election data provided for Colorado local congressional election. Denver had the largest voter turnout with approx 83% followed by Jefferson which was close to 11% while Arapahoe has the lowest voter turnout of approx 7% ![Election Results with county and candidates](images/ElectionResults_CountyAndCandidate.png)
