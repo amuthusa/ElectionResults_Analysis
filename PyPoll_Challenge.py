@@ -6,8 +6,11 @@ def getConsolidatedCountySummary(county_votes):
     #Determine the percentage of votes by each county
     #1. Initialize the county_summary
     counties_summary = list()
-    counties_summary.append(f"\nCounty Votes:\n")
+    #write the county based voter turnout header
+    county_header = f"\nCounty Votes:\n"
+    counties_summary.append(county_header)
 
+    summary = ""
     #2. Iterate through county list
     for county in county_votes:
         #3. Retrieve the vote count by count
@@ -15,7 +18,8 @@ def getConsolidatedCountySummary(county_votes):
         #4. Calculate teh percentage of votes 
         county_percentage_votes = (float (county_vote) / float (total_votes)) * 100
         #5. Create a county based summary with percentage of vote cast and total votes cast
-        counties_summary.append(f"{county}: {county_percentage_votes:.1f}% ({county_vote:,})\n")
+        summary = f"{county}: {county_percentage_votes:.1f}% ({county_vote:,})\n"
+        counties_summary.append(summary)
         #6.find the county with largest vote cast for the election
         if (county_vote > largest_vote):
             largest_vote = county_vote
@@ -27,7 +31,7 @@ def getConsolidatedCountySummary(county_votes):
         f"Largest County Turnout: {largest_turnout_county}"
         f"\n-------------------------------------\n"
     )
-    counties_summary.extend(largest_turnout)
+    counties_summary.append(largest_turnout)
     return counties_summary
 
 #creates consolidated summary for candidates and winning candidates details
@@ -66,7 +70,7 @@ def getConsolidateCandidateSummary(candidate_votes):
         f"Winning Percentage: {winning_percentage_of_votes:.1f}%\n"
     )
     #add winnning candidate summary to candidate summary to make it consolidated summary
-    candidates_summary.extend(winning_candidate_summary)
+    candidates_summary.append(winning_candidate_summary)
 
     return candidates_summary
 
@@ -150,21 +154,20 @@ with open(file_to_save, 'w') as election_analysis:
         f"Total Votes: {total_votes: ,}\n"
         f"-------------------------------------\n"
     )
+    print(election_results)
     #write the total votes count to the file
     election_analysis.write(election_results)
     
-    #write the county based voter turnout
-    county_vote_header = (
-        f"\nCounty Votes:\n"
-    )
-    election_analysis.write(county_vote_header)
+    
     #write county summary with county name, percentage_votes and total number of voter turnout
     #write the count with largest turnout for this election
     for county_summary in consolidated_counties_summary:
+        print(county_summary)
         election_analysis.write(county_summary)
 
     #write candidate summary with candidate name, percentage_votes and total number of votes they got
     #finally write the winning candidate details
     for candidate_summary in consolidated_candidates_summary:
+        print(str(candidate_summary))
         election_analysis.write(candidate_summary)
     
