@@ -10,15 +10,15 @@
   5. Find the winner with the number of votes they received and percentage of votes
   
 ## Prerequisite:
-  Runtime: Python 3.7.6
-  Editor: Any python editor preferred Visual Studio Code 1.40.1
+  Runtime: Python 3.7.6\
+  Editor: Any python editor preferred Visual Studio Code 1.40.1\
   Source Data: election_results.csv with Ballot Id, County, Candidate columns copied to Resources directory
   
 ## Analysis:
   Analysis was done for the given Colorado local congressional election results data. 
-  The total number of votes cast was 369,711. There were 3 candidates Charles Casper Stockham, Diana DeGette, Raymon Anthony Done who got the votes.
+  The total number of votes cast 369,711. There were 3 candidates Charles Casper Stockham, Diana DeGette, Raymon Anthony Done who got votes.
   
-  Diana DeGette got 272,892 votes which are approximately 74% of the votes cast followed by Charles Casper Stockham who got 85,213 votes which is 23% of the votes cast while Raymon Anthony Doane got 11,606 votes which approx 3% of the votes cast.
+  Diana DeGette got 272,892 votes which is approximately 74% of the votes cast followed by Charles Casper Stockham who got 85,213 votes which is 23% of the votes cast while Raymon Anthony Doane got 11,606 votes which is approx 3% of the votes cast.
   
   The winner is Diana DeGette who got the majority of the votes. Please see the snapshot of the result in a tabular form ![Election Results with candidate and winner](images/ElectionResults_WinnerDetails.png)
   
